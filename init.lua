@@ -13,15 +13,15 @@ vim.o.clipboard = 'unnamedplus'
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "*",
     callback = function()
-        vim.opt.formatoptions:remove("c") -- prevents commenting empty lines
-        vim.opt.formatoptions:remove("r") -- prevents auto-commenting on new lines
+        vim.opt.formatoptions:remove("c")
+        vim.opt.formatoptions:remove("r")
     end
 })
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "javascript", "typescript" },
   callback = function()
-    vim.opt.commentstring = "// %s"  -- Add a space after `//`
+    vim.opt.commentstring = "// %s"
   end
 })
 
